@@ -1,0 +1,49 @@
+name:                hamming74hs
+version:             0.1.0.0
+github:              "s-viour/hamming74hs"
+license:             MIT
+author:              "matt wyatt"
+maintainer:          "mwyatt1000@gmail.com"
+copyright:           "2021 matt wyatt"
+
+extra-source-files:
+- README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/s-viour/hamming74hs#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- bytestring
+- vector
+
+library:
+  source-dirs: src
+
+executables:
+  hamming74hs-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hamming74hs
+
+tests:
+  hamming74hs-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - hamming74hs
